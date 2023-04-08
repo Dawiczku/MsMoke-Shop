@@ -1,7 +1,364 @@
+.section--main {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(rgb(30, 30, 30), rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.7)), url("../images/backgrounds/bg4.jpeg");
+  background-size: cover;
+  color: rgb(220, 220, 220);
+}
+
+.main--middle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.main--about {
+  width: 25%;
+  color: rgb(220, 220, 220);
+  opacity: 0;
+}
+.main--about h2 {
+  text-align: center;
+  font-size: 2em;
+  font-family: "Lilita One", cursive;
+  margin-bottom: 0.5em;
+}
+.main--about p {
+  text-align: center;
+}
+
+.header,
+.header--left,
+.social-links__container,
+.phone a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  padding: 1.5em 2em;
+  box-shadow: 0 2px 20px 2px black;
+}
+.header h1 {
+  font-family: "Lilita One", cursive;
+  font-size: clamp(2.5em, 5vw, 3.5em);
+  color: firebrick;
+}
+
+.social-links__container,
+.header--left {
+  gap: 2em;
+}
+
+.info__button {
+  color: rgb(220, 220, 220);
+  background: inherit;
+  padding: 0.375em;
+  border: 2px solid firebrick;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.info__button:hover {
+  box-shadow: 0px 0px 10px 1px firebrick;
+  transform: translateY(-4px);
+}
+
+.fa-icon {
+  font-size: clamp(1em, 3vw, 1.5em);
+  padding: 0.375em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  transition: 250ms;
+}
+
+.social__link {
+  border-radius: 50%;
+  box-shadow: 0 0px 10px 0px black;
+  transition: 300ms;
+  filter: grayscale(1);
+}
+
+.social__link:hover {
+  transform: translateY(-4px);
+  filter: grayscale(0);
+}
+
+.facebook {
+  background-color: #3b5998;
+  box-shadow: 0 2px 10px 0px #3b5998;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 2px 10px 0px #cc2366;
+}
+
+.whatsapp {
+  background-color: #0b884e;
+  box-shadow: 0 2px 10px 0px #0b884e;
+}
+
+.phone {
+  position: relative;
+  padding: 0.25em 0;
+}
+
+.phone::before,
+.phone::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background-color: firebrick;
+  transition: 350ms;
+}
+
+.phone::before {
+  left: 0;
+}
+
+.phone::after {
+  right: 0;
+}
+
+.phone:hover::before,
+.phone:hover::after {
+  width: 70%;
+}
+
+.phone:hover {
+  color: rgb(255, 255, 255);
+}
+
+.search__form {
+  position: relative;
+  display: flex;
+  justify-content: normal;
+  align-items: center;
+}
+.search__form input,
+.search__form button {
+  font-size: clamp(0.75em, 3vw, 1.125em);
+  padding: 0.25em 0.75em;
+  border-radius: 25px;
+  background-color: inherit;
+  color: rgb(220, 220, 220);
+}
+.search__form input,
+.search__form input:focus {
+  border: 2px solid firebrick;
+}
+.search__form input:focus {
+  outline: none;
+}
+.search__form button {
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+.search__form button:hover {
+  color: rgb(255, 255, 255);
+}
+
+.categories {
+  font-size: 1rem;
+  position: relative;
+  display: grid;
+  align-self: flex-end;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding: 3em;
+  margin: 2em;
+  background: rgb(25, 25, 25);
+}
+
+.categories::before,
+.categories::after {
+  content: "";
+  position: absolute;
+  inset: -0.125rem;
+  background: linear-gradient(-135deg, rgb(80, 20, 20), firebrick);
+  z-index: -1;
+}
+
+.categories::after {
+  filter: blur(0.5rem);
+}
+
+.liquids--front,
+.liquids--back {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.9)), url(../images/products/liquids.jpg);
+}
+
+.disposable--front,
+.disposable--back {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.9)), url(../images/products/jednorazowki.jpg);
+}
+
+.sets--front,
+.sets--back {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.9)), url(../images/products/zestawy.jpg);
+}
+
+.parts--front,
+.parts--back {
+  background-image: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.9)), url(../images/products/parts.jpg);
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  width: 22em;
+  aspect-ratio: 1.8;
+  box-shadow: 0 0 10px 3px black;
+  border: 1px solid rgb(70, 70, 70);
+  cursor: pointer;
+}
+
+.card--front,
+.card--back {
+  background-size: cover;
+  padding: 1.5em 2em;
+}
+.card--front p,
+.card--back p {
+  text-align: center;
+}
+.card--front .card__heading,
+.card--back .card__heading {
+  color: rgb(200, 200, 200);
+  font-size: clamp(0.75em, 3vw, 1.5em);
+}
+.card--front p:not(.card__heading),
+.card--back p:not(.card__heading) {
+  font-size: clamp(0.75em, 2vw, 1em);
+}
+
+.card:hover {
+  transform: rotateX(180deg);
+}
+
+.card--front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card--back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
+  transform: rotateX(180deg);
+}
+
+@-webkit-keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+:root {
+  font-size: 20px;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.font--categories {
+  font-family: "Permanent Marker", cursive;
+}
+
+.font--content {
+  font-family: "Open Sans", sans-serif;
+}
+
+.text--bold {
+  font-weight: 600;
+}
+
+.text--upper {
+  text-transform: uppercase;
+}
+
+.element--show {
+  -webkit-animation: show 500ms ease-in-out;
+          animation: show 500ms ease-in-out;
+  opacity: 1;
+}
+
+.element--hide {
+  -webkit-animation: hide 500ms ease-in-out;
+          animation: hide 500ms ease-in-out;
 }/*# sourceMappingURL=styles.css.map */

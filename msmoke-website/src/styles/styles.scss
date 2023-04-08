@@ -1,7 +1,48 @@
+@import "./main", "./header", "./searchBar", "./categories", "./animations";
+
+:root {
+  font-size: 20px;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.font--categories {
+  font-family: "Permanent Marker", cursive;
+}
+
+.font--content {
+  font-family: "Open Sans", sans-serif;
+}
+
+.text--bold {
+  font-weight: 600;
+}
+
+.text--upper {
+  text-transform: uppercase;
+}
+
+.element--show {
+  animation: show 500ms ease-in-out;
+  opacity: 1;
+}
+
+.element--hide {
+  animation: hide 500ms ease-in-out;
 }

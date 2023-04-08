@@ -1,0 +1,107 @@
+@import "./mixins", "./variables";
+
+.header,
+.header--left,
+.social-links__container,
+.phone a {
+  @include flexJustAlign(space-between, center);
+}
+
+.header {
+  width: 100%;
+  padding: 1.5em 2em;
+  box-shadow: 0 2px 20px 2px black;
+  h1 {
+    font-family: $font--logo;
+    font-size: clamp(2.5em, 5vw, 3.5em);
+    color: $clr--main;
+  }
+}
+
+.social-links__container,
+.header--left {
+  gap: 2em;
+}
+
+.info__button {
+  color: $clr--text;
+  background: inherit;
+  padding: 0.375em;
+  border: 2px solid $clr--main;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  transition: 250ms;
+  cursor: pointer;
+}
+
+.info__button:hover {
+  box-shadow: 0px 0px 10px 1px $clr--main;
+  transform: translateY(-4px);
+}
+
+.fa-icon {
+  font-size: clamp(1em, 3vw, 1.5em);
+  padding: 0.375em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  transition: 250ms;
+}
+
+.social__link {
+  border-radius: 50%;
+  box-shadow: 0 0px 10px 0px black;
+  transition: 300ms;
+  filter: grayscale(1);
+}
+
+.social__link:hover {
+  transform: translateY(-4px);
+  filter: grayscale(0);
+}
+
+.facebook {
+  background-color: $bg--facebook;
+  box-shadow: 0 2px 10px 0px $bg--facebook;
+}
+
+.instagram {
+  background: $bg--instagram;
+  box-shadow: 0 2px 10px 0px #cc2366;
+}
+
+.whatsapp {
+  background-color: $bg--whatsapp;
+  box-shadow: 0 2px 10px 0px $bg--whatsapp;
+}
+
+.phone {
+  position: relative;
+  padding: 0.25em 0;
+}
+
+.phone::before,
+.phone::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background-color: $clr--main;
+  transition: 350ms;
+}
+
+.phone::before {
+  left: 0;
+}
+
+.phone::after {
+  right: 0;
+}
+
+.phone:hover::before,
+.phone:hover::after {
+  width: 70%;
+}
+
+.phone:hover {
+  color: $clr--hover;
+}

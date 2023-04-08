@@ -1,0 +1,105 @@
+@import "./variables";
+
+.categories {
+  font-size: 1rem;
+  position: relative;
+  display: grid;
+  align-self: flex-end;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding: 3em;
+  margin: 2em;
+  background: rgb(25, 25, 25);
+}
+
+.categories::before,
+.categories::after {
+  content: "";
+  position: absolute;
+  inset: -0.125rem;
+  background: linear-gradient(-135deg, rgb(80, 20, 20), firebrick);
+  z-index: -1;
+}
+
+.categories::after {
+  filter: blur(0.5rem);
+}
+
+.liquids--front,
+.liquids--back {
+  background-image: $gradient--card, url(../images/products/liquids.jpg);
+}
+
+.disposable--front,
+.disposable--back {
+  background-image: $gradient--card, url(../images/products/jednorazowki.jpg);
+}
+
+.sets--front,
+.sets--back {
+  background-image: $gradient--card, url(../images/products/zestawy.jpg);
+}
+
+.parts--front,
+.parts--back {
+  background-image: $gradient--card, url(../images/products/parts.jpg);
+}
+
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  width: 22em;
+  aspect-ratio: 1.8;
+  box-shadow: 0 0 10px 3px black;
+  border: 1px solid rgb(70, 70, 70);
+  cursor: pointer;
+}
+
+.card--front,
+.card--back {
+  background-size: cover;
+  padding: 1.5em 2em;
+
+  p {
+    text-align: center;
+  }
+
+  .card__heading {
+    color: rgb(200, 200, 200);
+    font-size: clamp(0.75em, 3vw, 1.5em);
+  }
+
+  p:not(.card__heading) {
+    font-size: clamp(0.75em, 2vw, 1em);
+  }
+}
+
+//
+.card:hover {
+  transform: rotateX(180deg);
+}
+
+.card--front {
+  @include flexJustAlign(center, center);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.card--back {
+  @include flexJustAlign(center, center);
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+  transform: rotateX(180deg);
+}

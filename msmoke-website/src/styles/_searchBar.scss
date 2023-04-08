@@ -1,0 +1,36 @@
+@import "./variables";
+
+.search__form {
+  position: relative;
+  @include flexJustAlign(normal, center);
+
+  input,
+  button {
+    font-size: clamp(0.75em, 3vw, 1.125em);
+    padding: 0.25em 0.75em;
+    border-radius: 25px;
+    background-color: inherit;
+    color: $clr--text;
+  }
+
+  input,
+  input:focus {
+    border: 2px solid $clr--main;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: $clr--hover;
+  }
+}
