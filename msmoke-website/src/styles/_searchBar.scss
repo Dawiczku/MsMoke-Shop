@@ -4,10 +4,15 @@
   position: relative;
   @include flexJustAlign(normal, center);
 
-  input,
-  button {
+  input {
     font-size: clamp(0.75em, 3vw, 1.125em);
     padding: 0.25em 0.75em;
+    border-radius: 25px;
+    background-color: inherit;
+    color: $clr--text;
+  }
+
+  button {
     border-radius: 25px;
     background-color: inherit;
     color: $clr--text;
@@ -24,7 +29,7 @@
 
   button {
     position: absolute;
-    right: 0;
+    right: 0.375rem;
     border: none;
     background-color: inherit;
     cursor: pointer;
@@ -32,5 +37,28 @@
 
   button:hover {
     color: $clr--hover;
+  }
+}
+
+@media (max-width: 1450px) {
+  .search__form {
+    input {
+      display: none;
+    }
+    button {
+      position: static;
+      color: rgb(220, 220, 220);
+      background: inherit;
+      border: 2px solid $clr--main;
+      border-radius: 50%;
+      transition: 250ms;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .search__form {
+    display: none;
   }
 }

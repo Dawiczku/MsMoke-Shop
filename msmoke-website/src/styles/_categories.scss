@@ -1,14 +1,14 @@
 @import "./variables";
 
 .categories {
-  font-size: 1rem;
+  font-size: clamp(0.5rem, 2.25vw, 1rem);
   position: relative;
   display: grid;
   align-self: flex-end;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
   padding: 3em;
-  margin: 2em;
+  margin: 3em;
   background: rgb(25, 25, 25);
 }
 
@@ -49,7 +49,7 @@
   position: relative;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
-  width: 22em;
+  width: 25em;
   aspect-ratio: 1.8;
   box-shadow: 0 0 10px 3px black;
   border: 1px solid rgb(70, 70, 70);
@@ -67,11 +67,11 @@
 
   .card__heading {
     color: rgb(200, 200, 200);
-    font-size: clamp(0.75em, 3vw, 1.5em);
+    font-size: 1.5em;
   }
 
   p:not(.card__heading) {
-    font-size: clamp(0.75em, 2vw, 1em);
+    font-size: 1em;
   }
 }
 
@@ -102,4 +102,10 @@
   backface-visibility: hidden;
   overflow: hidden;
   transform: rotateX(180deg);
+}
+
+@media (max-width: 1200px) {
+  .categories {
+    grid-template-columns: 1fr;
+  }
 }

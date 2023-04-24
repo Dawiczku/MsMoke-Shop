@@ -3,8 +3,6 @@
 .section--main {
   position: relative;
   z-index: 0;
-  @include flexJustAlign(space-between, center);
-  flex-direction: column;
   background-image: linear-gradient(
       rgba(30, 30, 30, 1),
       rgba(30, 30, 30, 0.85),
@@ -17,6 +15,7 @@
 
 .main--middle {
   @include flexJustAlign(space-around, center);
+  position: relative;
   width: 100%;
 }
 
@@ -24,15 +23,23 @@
   width: 25%;
   color: $clr--text;
   opacity: 0;
+  margin: 3em 0 3em 3em;
 
   h2 {
     text-align: center;
-    font-size: 2em;
+    font-size: clamp(1.25em, 3vw, 1.75em);
     font-family: $font--logo;
     margin-bottom: 0.5em;
   }
 
   p {
+    font-size: clamp(0.5em, 1.125vw, 1em);
     text-align: center;
+  }
+}
+
+@media (max-width: 1450px) {
+  .main--about {
+    display: none;
   }
 }

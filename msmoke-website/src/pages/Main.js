@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import Header from "../components/Header";
 import Categories from "../components/Categories";
+import NavBar from "../components/NavBar";
 
 export default function Main() {
   const [infoVisibility, setInfoVisibility] = useState(false);
+  const [navBarActive, setNavBarActive] = useState(false);
   const firstRender = useRef(true);
 
   useEffect(() => {
@@ -14,10 +16,18 @@ export default function Main() {
     setInfoVisibility(!infoVisibility);
   };
 
+  const handleChildNavbarData = (data) => {
+    setNavBarActive(data);
+  };
+
   return (
     <section className="section--main">
-      <Header changeInfoVisibility={changeInfoVisibility} />
+      <Header
+        changeInfoVisibility={changeInfoVisibility}
+        handleChildNavbarData={handleChildNavbarData}
+      />
       <div className="main--middle">
+        <NavBar navBarActive={navBarActive} />
         <div
           className={
             firstRender.current
@@ -40,7 +50,6 @@ export default function Main() {
         </div>
         <Categories />
       </div>
-      <div></div>
     </section>
   );
 }

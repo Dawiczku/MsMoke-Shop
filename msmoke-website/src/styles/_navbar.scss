@@ -1,0 +1,30 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  @include flexJustAlign(center, flex-start);
+  background: rgba(30, 29, 30, 1);
+  color: rgb(220, 220, 220);
+  z-index: 2;
+  transition: 0.5s;
+  padding: 2em;
+  text-align: center;
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.navbar--opened {
+  transform: translateY(0);
+}
+
+.navbar--closed {
+  transform: translateY(-100%);
+}

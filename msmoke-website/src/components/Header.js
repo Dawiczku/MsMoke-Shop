@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Header({ changeInfoVisibility }) {
+export default function Header({
+  changeInfoVisibility,
+  handleChildNavbarData,
+}) {
+  const [navBarActive, setnavBarActive] = useState(false);
+
+  const handleNavbarState = () => {
+    setnavBarActive(!navBarActive);
+    handleChildNavbarData(navBarActive);
+  };
+
   return (
     <>
       <header className="header">
         <div className="header--left">
+          <button className="navbar__button" onClick={handleNavbarState}>
+            <FontAwesomeIcon
+              icon="fa-solid fa-bars"
+              className="fa-icon burger"
+            />
+          </button>
           <button className="info__button" onClick={changeInfoVisibility}>
             <FontAwesomeIcon icon="fa-solid fa-info" className="fa-icon info" />
           </button>
@@ -54,10 +70,15 @@ export default function Header({ changeInfoVisibility }) {
               />
             </a>
           </div>
-          <div className="phone">
+          <div className="phone--container">
             <a href="tel:+48789563210">
-              <FontAwesomeIcon icon="fa-solid fa-phone" className="fa-icon" />
-              <p className="text--bold">+48 789-563-210</p>
+              <div className="phone">
+                <FontAwesomeIcon
+                  icon="fa-solid fa-phone"
+                  className="fa-icon--phone fa-icon social__link"
+                />
+                <p className="text--bold">+48 789-563-210</p>
+              </div>
             </a>
           </div>
         </div>

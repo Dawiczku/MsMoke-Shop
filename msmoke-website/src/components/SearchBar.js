@@ -13,7 +13,10 @@ export default function SearchBar() {
           autoComplete="off"
         />
         <button type="submit">
-          <FontAwesomeIcon icon="fa-solid fa-magnifying-glass" />
+          <FontAwesomeIcon
+            icon="fa-solid fa-magnifying-glass"
+            className=" fa-icon"
+          />
         </button>
       </form>
     </>

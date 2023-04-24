@@ -9,6 +9,7 @@ import {
   faPhone,
   faMagnifyingGlass,
   faInfo,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -17,5 +18,6 @@ library.add(
   faWhatsapp,
   faPhone,
   faMagnifyingGlass,
-  faInfo
+  faInfo,
+  faBars
 );
