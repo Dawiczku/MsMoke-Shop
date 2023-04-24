@@ -1,10 +1,16 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function SearchBar() {
+export default function SearchBar({ position }) {
   return (
     <>
-      <form className="search__form">
+      <form
+        className={
+          position === "nav"
+            ? "search__form search__form--nav"
+            : "search__form search__form--header"
+        }
+      >
         <input
           type="text"
           placeholder="Szukaj..."

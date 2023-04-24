@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -8,9 +8,12 @@ export default function Header({
 }) {
   const [navBarActive, setnavBarActive] = useState(false);
 
+  useEffect(() => {
+    handleChildNavbarData(navBarActive);
+  }, [handleChildNavbarData, navBarActive]);
+
   const handleNavbarState = () => {
     setnavBarActive(!navBarActive);
-    handleChildNavbarData(navBarActive);
   };
 
   return (
@@ -26,7 +29,7 @@ export default function Header({
           <button className="info__button" onClick={changeInfoVisibility}>
             <FontAwesomeIcon icon="fa-solid fa-info" className="fa-icon info" />
           </button>
-          <SearchBar />
+          <SearchBar position={"header"} />
         </div>
 
         <div className="header--middle">

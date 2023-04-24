@@ -46,7 +46,7 @@
 }
 
 .fa-icon {
-  font-size: clamp(0.5em, 3.5vw, 1.5em);
+  font-size: clamp(1em, 3.5vw, 1.5em);
   padding: 0.5rem;
   border-radius: 50%;
   aspect-ratio: 1;
@@ -121,20 +121,9 @@
     display: block;
   }
 
-  .facebook,
-  .instagram,
+  .social__link:not(.fa-icon--phone),
   .info__button,
   .phone p {
     display: none;
-  }
-}
-
-@media (max-width: 650px) {
-  .whatsapp {
-    display: none;
-  }
-
-  .header {
-    align-self: center;
   }
 }

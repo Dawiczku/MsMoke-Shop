@@ -27,7 +27,7 @@ export default function Main() {
         handleChildNavbarData={handleChildNavbarData}
       />
       <div className="main--middle">
-        <NavBar navBarActive={navBarActive} />
+        <NavBar page={"home"} navBarActive={navBarActive} />
         <div
           className={
             firstRender.current
