@@ -2,6 +2,7 @@ import SocialLinks from "./SocialLinks";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchBar from "./SearchBar";
+import { ReactComponent as Logo } from "../images/Logo.svg";
 
 export default function NavBar({ navBarActive, page, closeNavBar }) {
   const currentPageStyle = {
@@ -22,7 +23,7 @@ export default function NavBar({ navBarActive, page, closeNavBar }) {
               className="fa-icon icon--close"
             />
           </button>
-          <h1 className="logo logo--nav">MsMoke Logo</h1>
+          <Logo />
           <SearchBar position={"nav"} />
         </div>
         <ul className="text--bold">

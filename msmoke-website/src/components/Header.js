@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import SocialLinks from "./SocialLinks";
 import NavBar from "../components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ReactComponent as Logo } from "../images/Logo.svg";
 
 export default function Header() {
   const [navBarActive, setNavBarActive] = useState(false);
@@ -30,7 +31,7 @@ export default function Header() {
         </div>
 
         <div className="header--middle">
-          <h1 className="logo">MsMoke Logo</h1>
+          <Logo />
         </div>
 
         <div className="header--right">

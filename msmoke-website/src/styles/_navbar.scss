@@ -16,6 +16,13 @@
   color: rgb(220, 220, 220);
   transition: 0.5s;
 
+  .logo--svg {
+    font-size: clamp(1.75em, 10vw, 3.25em);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
   a {
     h2 {
       font-size: clamp(1em, 4.5vw, 1.625em);
@@ -40,17 +47,11 @@
   }
 }
 
-.logo--nav {
-  font-size: clamp(1.75em, 10vw, 3.25em);
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-}
-
 .nav__header {
   @include flexJustAlign(space-between, center);
   width: 100%;
-  padding: 0.5em 0;
+  padding: 1.5em 0;
+  margin-bottom: 1em;
 }
 
 .social__link--nav {

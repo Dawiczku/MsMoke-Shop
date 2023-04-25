@@ -1,38 +1,23 @@
 .section--main {
   position: relative;
   z-index: 0;
-  background-image: linear-gradient(rgb(30, 30, 30), rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.7)), url("../images/backgrounds/bg4.jpeg");
+  background-image: linear-gradient(rgba(30, 30, 30, 0.6), rgba(30, 30, 30, 0.7), rgba(30, 30, 30, 0.6)), url("../images/backgrounds/msmoke33.jpeg");
   background-size: cover;
   color: rgb(220, 220, 220);
 }
 
 .main--middle {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   position: relative;
   width: 100%;
+  padding: 3em 1.25em;
 }
 
-.main--about {
-  width: 25%;
-  color: rgb(220, 220, 220);
-  margin: 3em 0 3em 3em;
-}
-.main--about h2 {
-  text-align: center;
-  font-size: clamp(1.25em, 3vw, 1.75em);
-  font-family: "Lilita One", cursive;
-  margin-bottom: 0.5em;
-}
-.main--about p {
-  font-size: clamp(0.5em, 1.125vw, 1em);
-  text-align: center;
-}
-
-@media (max-width: 1450px) {
-  .main--about {
-    display: none;
+@media (max-width: 1200px) {
+  .main--middle {
+    justify-content: center;
   }
 }
 .header,
@@ -40,6 +25,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo--svg {
+  display: block;
+  max-width: 300px;
+  height: 100px;
 }
 
 .header {
@@ -130,14 +121,13 @@
   }
 }
 .categories {
-  font-size: clamp(0.5rem, 2.25vw, 1rem);
+  font-size: clamp(0.45rem, 2.25vw, 1rem);
   position: relative;
   display: grid;
   align-self: flex-end;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
   padding: 3em;
-  margin: 3em;
   background: rgb(25, 25, 25);
 }
 
@@ -295,6 +285,12 @@
   color: rgb(220, 220, 220);
   transition: 0.5s;
 }
+.navbar .logo--svg {
+  font-size: clamp(1.75em, 10vw, 3.25em);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 .navbar a h2 {
   font-size: clamp(1em, 4.5vw, 1.625em);
 }
@@ -316,19 +312,13 @@
   cursor: pointer;
 }
 
-.logo--nav {
-  font-size: clamp(1.75em, 10vw, 3.25em);
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-}
-
 .nav__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0.5em 0;
+  padding: 1.5em 0;
+  margin-bottom: 1em;
 }
 
 .social__link--nav {
@@ -614,12 +604,15 @@
 .age-verify__page {
   display: grid;
   place-items: center;
+  padding: 1em;
   width: 100vw;
   height: 100vh;
   background-color: rgb(30, 30, 30);
   color: rgb(220, 220, 220);
 }
 .age-verify__page h1 {
+  text-align: center;
+  font-size: clamp(1.125em, 5vw, 2em);
   margin-bottom: 2rem;
 }
 
@@ -630,7 +623,7 @@
   gap: 1em;
 }
 .age-verify__buttons button {
-  font-size: clamp(1em, 4vw, 1.25em);
+  font-size: clamp(0.875em, 4vw, 1.25em);
   font-weight: 600;
   padding: 0.5em;
   background: inherit;

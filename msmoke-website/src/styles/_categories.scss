@@ -1,14 +1,13 @@
 @import "./variables";
 
 .categories {
-  font-size: clamp(0.5rem, 2.25vw, 1rem);
+  font-size: clamp(0.45rem, 2.25vw, 1rem);
   position: relative;
   display: grid;
   align-self: flex-end;
   grid-template-columns: 1fr 1fr;
   gap: 2em;
   padding: 3em;
-  margin: 3em;
   background: rgb(25, 25, 25);
 }
 

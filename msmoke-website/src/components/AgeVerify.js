@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function AgeVerify() {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ export default function AgeVerify() {
     <>
       <div className="age-verify__page">
         <div>
-          <h1>Strona jedynie dla pelnoletnich, czy jestes dorosly ?</h1>
+          <h1>Strona jedynie dla pelnoletnich.</h1>
           <div className="age-verify__buttons">
             <button className="button--minor" onClick={() => navigate(-1)}>
               Wychodze
