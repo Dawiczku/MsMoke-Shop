@@ -10,6 +10,7 @@ import {
   faMagnifyingGlass,
   faInfo,
   faBars,
+  faX,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -19,5 +20,6 @@ library.add(
   faPhone,
   faMagnifyingGlass,
   faInfo,
-  faBars
+  faBars,
+  faX
 );

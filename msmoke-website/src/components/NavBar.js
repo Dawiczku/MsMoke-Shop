@@ -1,8 +1,9 @@
+import SocialLinks from "./SocialLinks";
 import React from "react";
-import SearchBar from "./SearchBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SearchBar from "./SearchBar";
 
-export default function NavBar({ navBarActive, page }) {
+export default function NavBar({ navBarActive, page, closeNavBar }) {
   const currentPageStyle = {
     borderBottom: "2px solid dodgerblue",
   };
@@ -14,8 +15,16 @@ export default function NavBar({ navBarActive, page }) {
           navBarActive ? "navbar navbar--opened" : "navbar navbar--closed"
         }
       >
-        <SearchBar position={"nav"} />
-
+        <div className="nav__header">
+          <button className="navbar__button" onClick={closeNavBar}>
+            <FontAwesomeIcon
+              icon="fa-solid fa-x"
+              className="fa-icon icon--close"
+            />
+          </button>
+          <h1 className="logo logo--nav">MsMoke Logo</h1>
+          <SearchBar position={"nav"} />
+        </div>
         <ul className="text--bold">
           <li style={page === "home" ? currentPageStyle : null}>Home</li>
           <li>Liquidy</li>
@@ -31,44 +40,7 @@ export default function NavBar({ navBarActive, page }) {
           </div>
         </a>
 
-        <div className="header--right social-links__container">
-          <div className="social__link--nav facebook">
-            <a
-              href="https://www.facebook.com/people/MsMoke/100088173109679/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon
-                icon="fa-brands fa-facebook-f"
-                className="fa-icon fa-icon--facebook"
-              />
-            </a>
-          </div>
-          <div className="social__link--nav instagram">
-            <a
-              href="https://www.instagram.com/msmoke_zagan/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon
-                icon="fa-brands fa-instagram"
-                className="fa-icon fa-icon--instagram"
-              />
-            </a>
-          </div>
-          <div className="social__link--nav whatsapp">
-            <a
-              href="https://wa.me/48783241423"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FontAwesomeIcon
-                icon="fa-brands fa-whatsapp"
-                className="fa-icon fa-icon--whatsapp"
-              />
-            </a>
-          </div>
-        </div>
+        <SocialLinks page="nav" />
       </nav>
     </>
   );

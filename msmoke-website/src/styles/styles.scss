@@ -1,5 +1,5 @@
 @import "./main", "./header", "./searchBar", "./categories", "./animations",
-  "./navbar";
+  "./navbar", "./product", "./produkty", "./socials";
 
 :root {
   font-size: 20px;
@@ -14,7 +14,7 @@
   font-family: "Open Sans", sans-serif;
 }
 
-section {
+.section--main {
   min-height: 100vh;
 }
 

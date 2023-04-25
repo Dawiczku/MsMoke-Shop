@@ -1,0 +1,98 @@
+.social-links__container,
+.social-links__container--nav {
+  gap: 1em;
+}
+
+.social-links__container,
+.social-links__container--nav,
+.phone a {
+  @include flexJustAlign(space-between, center);
+}
+
+.social-links__container--nav {
+  .social__link {
+    filter: grayscale(0);
+  }
+}
+
+.fa-icon {
+  font-size: clamp(1em, 3vw, 1.5em);
+  padding: 0.5rem;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  transition: 250ms;
+}
+
+.social__link {
+  border-radius: 50%;
+  transition: 300ms;
+  filter: grayscale(1);
+}
+
+.social__link:hover {
+  transform: translateY(-4px);
+  filter: grayscale(0);
+}
+
+.facebook {
+  background-color: $bg--facebook;
+  box-shadow: 0 2px 10px 0px $bg--facebook;
+}
+
+.instagram {
+  background: $bg--instagram;
+  box-shadow: 0 2px 10px 0px #cc2366;
+}
+
+.whatsapp {
+  background-color: $bg--whatsapp;
+  box-shadow: 0 2px 10px 0px $bg--whatsapp;
+}
+
+.fa-icon--phone {
+  background: $clr--main;
+  box-shadow: 0 2px 10px 0px $clr--main;
+}
+
+.phone {
+  @include flexJustAlign(center, center);
+  gap: 0.75em;
+  position: relative;
+
+  p {
+    font-size: clamp(0.5em, 2.875vw, 1em);
+  }
+}
+
+.phone::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 0;
+  background-color: $clr--main;
+  transition: 350ms;
+}
+
+.phone::after {
+  right: 0;
+  bottom: 0;
+}
+
+.phone:hover::after {
+  width: 70%;
+}
+
+.phone:hover {
+  color: $clr--hover;
+}
+
+@media (max-width: 1450px) {
+  .social-links__container,
+  .phone p {
+    display: none;
+  }
+
+  .phone::after {
+    height: 0;
+  }
+}

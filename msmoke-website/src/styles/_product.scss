@@ -1,0 +1,11 @@
+.product__wrapper {
+  @include flexJustAlign(space-between, center);
+  flex-direction: column;
+  border: 2px solid coral;
+}
+
+.price_container {
+  p {
+    display: inline;
+  }
+}
