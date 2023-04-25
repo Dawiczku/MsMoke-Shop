@@ -1,3 +1,8 @@
+.section--specific-product {
+  background-color: rgb(30, 30, 30);
+  min-height: 100vh;
+}
+
 .specific-product__wrapper {
   background: rgb(30, 30, 30);
   color: rgb(220, 220, 220);
@@ -49,7 +54,10 @@
   font-size: 0.75em;
 }
 
-@media (max-width: 615px) {
+@media (max-width: 850px) {
+  .specific-product__wrapper {
+    transform: translateY(-10%), translateX(-50%);
+  }
   .specific-product__card {
     flex-direction: column;
   }
@@ -60,5 +68,11 @@
 
   .info__container {
     text-align: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .section--specific-product {
+    min-height: 150vh;
   }
 }
