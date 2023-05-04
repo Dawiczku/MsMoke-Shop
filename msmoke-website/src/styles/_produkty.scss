@@ -1,8 +1,8 @@
 .products__wrapper {
   display: grid;
-  place-items: center;
+  place-items: start center;
   min-height: 100vh;
-  gap: 1.5em;
+  gap: 2em;
   padding: 2em 1em;
   grid-template-columns: repeat(4, 1fr);
   background: rgb(30, 30, 30);

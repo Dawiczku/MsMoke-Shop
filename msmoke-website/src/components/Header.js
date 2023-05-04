@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import SocialLinks from "./SocialLinks";
 import NavBar from "../components/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ReactComponent as Logo } from "../images/Logo.svg";
+import { Link } from "react-router-dom";
 
-export default function Header() {
+export default function Header({ currentSection }) {
   const [navBarActive, setNavBarActive] = useState(false);
+
+  useEffect(() => {
+    setNavBarActive(false);
+  }, [currentSection]);
 
   const handleNavbarState = () => {
     setNavBarActive(!navBarActive);
@@ -16,9 +21,9 @@ export default function Header() {
     <>
       <header className="header">
         <NavBar
+          currentSection={currentSection}
           navBarActive={navBarActive}
           closeNavBar={handleNavbarState}
-          page="home"
         />
         <div className="header--left">
           <button className="navbar__button" onClick={handleNavbarState}>
@@ -31,7 +36,9 @@ export default function Header() {
         </div>
 
         <div className="header--middle">
-          <Logo />
+          <Link to="/home">
+            <Logo />
+          </Link>
         </div>
 
         <div className="header--right">

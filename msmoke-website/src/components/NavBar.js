@@ -3,8 +3,9 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SearchBar from "./SearchBar";
 import { ReactComponent as Logo } from "../images/Logo.svg";
+import { Link } from "react-router-dom";
 
-export default function NavBar({ navBarActive, page, closeNavBar }) {
+export default function NavBar({ navBarActive, closeNavBar, currentSection }) {
   const currentPageStyle = {
     borderBottom: "2px solid dodgerblue",
   };
@@ -27,11 +28,35 @@ export default function NavBar({ navBarActive, page, closeNavBar }) {
           <SearchBar position={"nav"} />
         </div>
         <ul className="text--bold">
-          <li style={page === "home" ? currentPageStyle : null}>Home</li>
-          <li>Liquidy</li>
-          <li>Jednorazowki</li>
-          <li>Zestawy</li>
-          <li>Czesci do e-papierosow</li>
+          <Link to="/home">
+            <li style={currentSection === "home" ? currentPageStyle : null}>
+              Home
+            </li>
+          </Link>
+          <Link to="/products/liquid">
+            <li style={currentSection === "liquid" ? currentPageStyle : null}>
+              Liquidy
+            </li>
+          </Link>
+          <Link to="/products/jednorazowka">
+            <li
+              style={
+                currentSection === "jednorazowka" ? currentPageStyle : null
+              }
+            >
+              Jednorazowki
+            </li>
+          </Link>
+          <Link to="/products/zestaw">
+            <li style={currentSection === "zestaw" ? currentPageStyle : null}>
+              Zestawy
+            </li>
+          </Link>
+          <Link to="/products/sprzet">
+            <li style={currentSection === "sprzet" ? currentPageStyle : null}>
+              Czesci do e-papierosow
+            </li>
+          </Link>
         </ul>
 
         <a href="tel:+48789563210">

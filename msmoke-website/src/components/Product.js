@@ -1,22 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Product() {
+export default function Product(props) {
+  const { id, zdjecie, nazwa, cena } = props;
+  const slicedPrice = cena.split(".");
   return (
     <div className="product__wrapper">
-      <Link to="product">
+      <Link to={`/products/product/${id}`} state={props}>
         <div className="product__card">
           <div className="image__container">
             <img
               alt="malik-montana-jagodzianki"
               className="product__image"
-              src={require("../images/malik.jpg")}
+              src={zdjecie}
             />
           </div>
-          <h2 className="card__heading">Malik Montana Jagodzianki 700 Puff</h2>
+          <h2 className="card__heading">{nazwa}</h2>
           <div className="text--bold price__container">
-            <p className="price--integer">40.</p>
-            <p className="price--decimal">00</p>
+            <p className="price--integer">{slicedPrice[0]}.</p>
+            <p className="price--decimal">{slicedPrice[1]}</p>
             <p className="currency">PLN</p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 .product__wrapper {
   display: grid;
-  place-items: center;
-  width: 80%;
+  place-items: start center;
+  width: 95%;
   padding: 1em;
   border: 2px solid firebrick;
   box-shadow: 0 0 10px 1px firebrick;
@@ -16,8 +16,8 @@
 }
 
 .image__container {
-  width: 100%;
-  aspect-ratio: 1;
+  max-width: 350px;
+  max-height: 350px;
   border: 2px solid white;
 }
 
@@ -27,6 +27,7 @@
 
 .product__image {
   display: block;
+  aspect-ratio: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;

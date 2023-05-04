@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function SpecificProduct() {
+export default function SpecificProduct({ productInfo }) {
+  const { zdjecie, nazwa, cena, smak, moc } = productInfo;
+  const slicedPrice = cena.split(".");
+
+  useEffect(() => {
+    document.documentElement.scrollTop = 0;
+  }, []);
+
   return (
     <>
       <div className="specific-product__wrapper">
@@ -10,24 +17,24 @@ export default function SpecificProduct() {
             <img
               alt="malik-montana-jagodzianki"
               className="product__image"
-              src={require("../images/malik.jpg")}
+              src={zdjecie}
             />
           </div>
           <div className="product__info">
             <div className="info__container">
-              <h3 className="card__heading">
-                Malik Montana Jagodzianki 700 Puff
-              </h3>
+              <h3 className="card__heading">{nazwa}</h3>
               <div className="text--bold price__container">
-                <p className="price--integer">40.</p>
-                <p className="price--decimal">00</p>
+                <p className="price--integer">{slicedPrice[0]}.</p>
+                <p className="price--decimal">{slicedPrice[1]}</p>
                 <p className="currency">PLN</p>
               </div>
               <p>
-                <strong>Smak: </strong>Jagoda
+                <strong>Smak: </strong>
+                {smak}
               </p>
               <p>
-                <strong>Moc: </strong>20mg
+                <strong>Moc: </strong>
+                {moc}mg
               </p>
             </div>
 
