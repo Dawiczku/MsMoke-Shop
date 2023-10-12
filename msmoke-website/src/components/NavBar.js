@@ -1,7 +1,6 @@
 import SocialLinks from "./SocialLinks";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SearchBar from "./SearchBar";
 import { ReactComponent as Logo } from "../images/Logo.svg";
 import { Link } from "react-router-dom";
 
@@ -25,7 +24,6 @@ export default function NavBar({ navBarActive, closeNavBar, currentSection }) {
             />
           </button>
           <Logo />
-          <SearchBar position={"nav"} />
         </div>
         <ul className="text--bold">
           <Link to="/home">
@@ -33,9 +31,19 @@ export default function NavBar({ navBarActive, closeNavBar, currentSection }) {
               Home
             </li>
           </Link>
-          <Link to="/products/liquid">
+          <Link to="/liquid/nicotine">
             <li style={currentSection === "liquid" ? currentPageStyle : null}>
               Liquidy
+            </li>
+          </Link>
+          <Link to="/products/premix">
+            <li style={currentSection === "premix" ? currentPageStyle : null}>
+              Premixy
+            </li>
+          </Link>
+          <Link to="/products/longfill">
+            <li style={currentSection === "longfill" ? currentPageStyle : null}>
+              Longfille
             </li>
           </Link>
           <Link to="/products/jednorazowka">
@@ -44,7 +52,7 @@ export default function NavBar({ navBarActive, closeNavBar, currentSection }) {
                 currentSection === "jednorazowka" ? currentPageStyle : null
               }
             >
-              Jednorazowki
+              Jednorazówki
             </li>
           </Link>
           <Link to="/products/zestaw">
@@ -52,17 +60,39 @@ export default function NavBar({ navBarActive, closeNavBar, currentSection }) {
               Zestawy
             </li>
           </Link>
+          <Link to="/cartridge/type">
+            <li
+              style={currentSection === "cartridge" ? currentPageStyle : null}
+            >
+              Cartridge
+            </li>
+          </Link>
+          <Link to="/products/pod">
+            <li style={currentSection === "pod" ? currentPageStyle : null}>
+              Pody
+            </li>
+          </Link>
           <Link to="/products/sprzet">
             <li style={currentSection === "sprzet" ? currentPageStyle : null}>
-              Czesci do e-papierosow
+              Części do e-papierósow
             </li>
           </Link>
         </ul>
 
         <a href="tel:+48789563210">
           <div>
-            <h2>Zamow juz teraz!</h2>
+            <h2>Zamów już teraz!</h2>
             <p className="text--bold">+48 789-563-210</p>
+            <h1
+              style={{
+                fontSize: "clamp(1rem, 4vw, 2.125rem)",
+                borderBottom: "2px solid firebrick",
+                borderTop: "2px solid firebrick",
+                marginTop: "1rem",
+              }}
+            >
+              ^ Click Here! v
+            </h1>
           </div>
         </a>
 

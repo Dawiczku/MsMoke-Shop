@@ -12,7 +12,27 @@ export default function Produkty() {
 
   useEffect(() => {
     location.state
-      ? setProducts(location.state.filteredDBItems)
+      ? location.state.filteredDBItems
+        ? setProducts(location.state.filteredDBItems)
+        : location.state.nicotine
+        ? setProducts(
+            dbItems.filter((item) => {
+              return (
+                item.produkt_typ === id &&
+                item.produkt_moc === location.state.nicotine
+              );
+            })
+          )
+        : setProducts(
+            dbItems.filter((item) => {
+              return (
+                item.produkt_typ === id &&
+                item.produkt_nazwa
+                  .toLowerCase()
+                  .includes(location.state.cartridgeType)
+              );
+            })
+          )
       : setProducts(
           dbItems.filter((item) => {
             return item.produkt_typ === id;

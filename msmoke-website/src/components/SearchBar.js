@@ -24,8 +24,8 @@ export default function SearchBar({ position }) {
       <form
         onSubmit={handleSubmit}
         className={
-          position === "nav"
-            ? "search__form search__form--nav"
+          position === "phone"
+            ? "search__form search__form--phone"
             : "search__form search__form--header"
         }
       >

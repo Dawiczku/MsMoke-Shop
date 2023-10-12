@@ -25,6 +25,10 @@
   font-size: clamp(0.5em, 4vw, 0.875em);
 }
 
+.card__flavour {
+  font-size: clamp(0.5rem, 3vw, 0.65rem);
+}
+
 .product__image {
   display: block;
   aspect-ratio: 1;

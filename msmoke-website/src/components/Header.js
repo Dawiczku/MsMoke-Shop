@@ -39,6 +39,7 @@ export default function Header({ currentSection }) {
           <Link to="/home">
             <Logo />
           </Link>
+          <SearchBar position={"phone"} />
         </div>
 
         <div className="header--right">

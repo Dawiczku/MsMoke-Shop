@@ -5,9 +5,9 @@
   @include flexJustAlign(normal, center);
 
   input {
-    font-size: clamp(1em, 3vw, 1.125em);
-    padding: 0.25em 0.75em;
-    border-radius: 25px;
+    font-size: clamp(0.875em, 3vw, 1.125em);
+    padding: 0.25em 0.5em;
+    border-radius: 35px;
     background-color: inherit;
     color: $clr--text;
   }
@@ -24,7 +24,9 @@
   button {
     font-size: 0.875em;
     position: absolute;
-    right: 0.375rem;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
     border: none;
     background-color: inherit;
     cursor: pointer;
@@ -38,8 +40,15 @@
   }
 }
 
+.search__form--phone {
+  display: none;
+}
+
 @media (max-width: 1450px) {
   .search__form--header {
     display: none;
+  }
+  .search__form--phone {
+    display: block;
   }
 }

@@ -9,6 +9,8 @@ import AgeVerify from "./components/AgeVerify";
 import Secret from "./pages/Secret";
 import { useDispatch } from "react-redux";
 import { fetchDBItems } from "./helpers/actions";
+import Nicotine from "./components/Nicotine";
+import CartridgeType from "./components/CartridgeType";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +32,8 @@ function App() {
             path={`/${process.env.REACT_APP_SECRET_PAGE}`}
             element={<Secret />}
           />
+          <Route path="/liquid/nicotine" element={<Nicotine />} />
+          <Route path="/cartridge/type" element={<CartridgeType />} />
         </Routes>
       </BrowserRouter>
     </>

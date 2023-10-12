@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   left: 0;
-  height: 100vh;
+  height: 120vh;
   z-index: 3;
   @include flexJustAlign(flex-start, center);
   flex-direction: column;
@@ -14,7 +14,6 @@
   box-shadow: 0 0 10px 5px black;
   background: rgba(30, 29, 30, 1);
   color: rgb(220, 220, 220);
-  transition: 0.5s;
 
   .logo--svg {
     font-size: clamp(1.75em, 10vw, 3.25em);
@@ -41,7 +40,7 @@
       display: inline-block;
       font-size: clamp(0.875em, 4vw, 1.25em);
       padding: 0.125em;
-      margin-bottom: 1em;
+      margin-bottom: 0.5em;
       cursor: pointer;
     }
   }
@@ -64,20 +63,16 @@
 
 .navbar--opened {
   transform: translateY(0);
+  transition: 0.5s;
 }
 
 .navbar--closed {
-  transform: translateY(-100%);
+  transform: translateY(-250%);
+  transition: 1.5s ease-out;
 }
 
-@media (max-width: 1200px) {
-  .search__form {
-    input {
-      display: none;
-    }
-    button {
-      border: 2px solid $clr--main;
-      border-radius: 50%;
-    }
+@media (max-height: 800px) {
+  .navbar {
+    height: 300vh;
   }
 }

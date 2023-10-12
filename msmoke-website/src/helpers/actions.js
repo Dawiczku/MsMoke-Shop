@@ -16,13 +16,14 @@ export const fetchItemsFailure = (error) => ({
 export const fetchDBItems = () => {
   return (dispatch) => {
     axios
-      .get(`${process.env.REACT_APP_HOST}/getItems`)
+      .get(`${process.env.REACT_APP_HOST}/getItems/`, { maxRedirects: 0 })
       .then((response) => {
         const { items } = response.data;
         dispatch(fetchItemsSuccess(items));
       })
       .catch((err) => {
         dispatch(fetchItemsFailure(err.message));
+        console.log(err.message);
       });
   };
 };

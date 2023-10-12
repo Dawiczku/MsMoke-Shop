@@ -1,11 +1,11 @@
 @import "./variables";
 
 .categories {
-  font-size: clamp(0.45rem, 2.25vw, 1rem);
+  font-size: clamp(0.45rem, 2.25vw, 0.835rem);
   position: relative;
   display: grid;
   align-self: flex-end;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2em;
   padding: 3em;
   background: rgb(25, 25, 25);
@@ -42,6 +42,26 @@
 .parts--front,
 .parts--back {
   background-image: $gradient--card, url(../images/products/parts.jpg);
+}
+
+.premix--front,
+.premix--back {
+  background-image: $gradient--card, url(../images/products/premix.jpg);
+}
+
+.longfill--front,
+.longfill--back {
+  background-image: $gradient--card, url(../images/products/longfill.jpg);
+}
+
+.pody--front,
+.pody--back {
+  background-image: $gradient--card, url(../images/products/pody.jpg);
+}
+
+.cartridge--front,
+.cartridge--back {
+  background-image: $gradient--card, url(../images/products/cartridge.jpg);
 }
 
 .card {
@@ -101,6 +121,18 @@
   backface-visibility: hidden;
   overflow: hidden;
   transform: rotateX(180deg);
+}
+
+@media (max-width: 1900px) {
+  .categories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1500px) {
+  .categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 1200px) {
